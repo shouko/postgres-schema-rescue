@@ -14,8 +14,10 @@ $table_info_dir = $arvg[2];
 
 $tables = json_decode(file_get_contents($table_info_file));
 
-foreach($tables as $table){
-	
+foreach($tables as $table_name => $pkey_list){
+	if(is_file($table_info_dir."/".$table_name.".json")){
+		$table_columns = json_decode(file_get_contents($table_info_dir."/".$table_name.".json"));
+	}
 }
 
 ?>
